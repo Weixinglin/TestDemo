@@ -3,6 +3,8 @@ package com.xiaolai.ssm.dao;
 import com.xiaolai.ssm.domain.Member;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 /**
  * @Description TODO
  * @Author weixinglin
@@ -16,4 +18,7 @@ public interface MemberDao {
      */
     @Select("select * from member where id=#{id}")
     Member findById(String id) throws Exception;
+
+    @Select("select * from member")
+    List<Member> findAll();
 }
